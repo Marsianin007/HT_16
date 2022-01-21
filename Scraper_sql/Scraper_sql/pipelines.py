@@ -20,7 +20,7 @@ class ScraperSqlPipeline:
         print("Link: " + item["link"])
 
         str_news = " ".join(item["news_text"])
-        str_tegs = "#".join(item["tegs"])
+        str_tegs = "#" + "#".join(item["tegs"])
 
         cur.execute('INSERT INTO authors_table VALUES(?, ?, ?, ?)', (item["title"], str_news, str_tegs, item["link"]))
         base.commit()
